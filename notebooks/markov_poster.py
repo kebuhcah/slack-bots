@@ -37,7 +37,8 @@ user_emoji_map = {
     'Akira' : ':japanese_goblin:',
     'Nanfei' : ':bird:',
     'Shelley' : ':shell:',
-    'Jinnie' : ':dog2:'
+    'Jinnie' : ':dog2:',
+    'Hai-Long' : ':dragon:'
 }
 
 for i in range(0,len(content)):
