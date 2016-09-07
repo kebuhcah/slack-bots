@@ -43,6 +43,8 @@ user_emoji_map = {
     'Dusan' : ':stuck_out_tongue_winking_eye:',
     'Derek' : ':neutral_face:',
     'Huy Quang' : ':flashlight:',
+    'Ivett' : ':cocktail:',
+    'Anand' : ':boy::skin-tone-5:',
 }
 
 for i in range(0,len(content)):
