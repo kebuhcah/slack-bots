@@ -1,0 +1,1 @@
+curl -X POST --data-urlencode 'payload={"channel": "#general", "username": "Szia Bot", "text": "Sziasztok!", "icon_emoji": ":flag-hu:"}' https://hooks.slack.com/services/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
