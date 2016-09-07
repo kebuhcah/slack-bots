@@ -38,7 +38,11 @@ user_emoji_map = {
     'Nanfei' : ':bird:',
     'Shelley' : ':shell:',
     'Jinnie' : ':dog2:',
-    'Hai-Long' : ':dragon:'
+    'Hai-Long' : ':dragon:',
+    'Gabor' : ':sheep:',
+    'Dusan' : ':stuck_out_tongue_winking_eye:',
+    'Derek' : ':neutral_face:',
+    'Huy Quang' : ':flashlight:',
 }
 
 for i in range(0,len(content)):
