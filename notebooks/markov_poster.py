@@ -35,7 +35,9 @@ user_emoji_map = {
     'Roy' : ':thinking_face:',
     'David' : ':smiling_imp:',
     'Akira' : ':japanese_goblin:',
-    'Nanfei' : ':bird:'
+    'Nanfei' : ':bird:',
+    'Shelley' : ':shell:',
+    'Jinnie' : ':dog2:'
 }
 
 for i in range(0,len(content)):
