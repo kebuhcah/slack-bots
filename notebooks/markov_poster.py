@@ -46,6 +46,7 @@ user_emoji_map = {
     'Ivett' : ':cocktail:',
     'Anand' : ':boy::skin-tone-5:',
     'Kevin' : ':fire:',
+    'Szabolcs' : ':crossed_swords:',
 }
 
 for i in range(0,len(content)):
