@@ -54,6 +54,6 @@ for i in range(0,len(content)):
     print user, message
     try:
         slackPost(message, 'Markov ' + user, user_emoji_map[user], '#markov')
+        time.sleep(60)
     except Exception as e:
         print 'FAILED!'
-    time.sleep(60)
