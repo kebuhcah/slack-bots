@@ -45,11 +45,15 @@ user_emoji_map = {
     'Huy Quang' : ':flashlight:',
     'Ivett' : ':cocktail:',
     'Anand' : ':boy::skin-tone-5:',
+    'Kevin' : ':fire:',
 }
 
 for i in range(0,len(content)):
     user = content.ix[i]['user']
     message = content.ix[i]['message']
     print user, message
-    slackPost(message, 'Markov ' + user, user_emoji_map[user], '#markov')
-    time.sleep(600)
+    try:
+        slackPost(message, 'Markov ' + user, user_emoji_map[user], '#markov')
+    except Exception as e:
+        print 'FAILED!'
+    time.sleep(60)
