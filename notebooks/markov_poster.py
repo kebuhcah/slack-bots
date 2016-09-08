@@ -52,4 +52,4 @@ for i in range(0,len(content)):
     message = content.ix[i]['message']
     print user, message
     slackPost(message, 'Markov ' + user, user_emoji_map[user], '#markov')
-    time.sleep(30)
+    time.sleep(600)
