@@ -47,15 +47,20 @@ user_emoji_map = {
     'Anand' : ':boy::skin-tone-5:',
     'Kevin' : ':fire:',
     'Szabolcs' : ':crossed_swords:',
+    'Lorant' : ':beer:',
 }
 
 for i in range(0,len(content)):
     user = content.ix[i]['user']
     message = content.ix[i]['message']
+    remainingPosts = len(content) - i - 1
+    remainingSeconds = (datetime.datetime(2016, 9, 12, 0, 7,30) - datetime.datetime.now()).total_seconds()
+    secondsPerPost = remainingSeconds / remainingPosts
     print i,
     try:
         slackPost(message, 'Markov ' + user, user_emoji_map[user], '#markov')
-        time.sleep(120)
+        print secondsPerPost / 60, 'minutes till next post'
+        time.sleep(secondsPerPost)
     except Exception as e:
-        print
+        print e
         print 'FAILED!', user, message
