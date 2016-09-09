@@ -1,7 +1,7 @@
 import json
 import urllib2
 import pandas as pd
-import time
+import time, datetime
 
 lieblichUrl='https://hooks.slack.com/services/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'
 markovUrl='https://hooks.slack.com/services/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'
