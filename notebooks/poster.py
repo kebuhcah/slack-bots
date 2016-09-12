@@ -53,7 +53,7 @@ user_emoji_map = {
 for i in range(0,len(content)):
     user = content.ix[i]['user']
     message = content.ix[i]['message']
-    remainingPosts = len(content) - i - 1
+    remainingPosts = len(content) - i
     remainingSeconds = (datetime.datetime(2016, 9, 12, 0, 7,30) - datetime.datetime.now()).total_seconds()
     secondsPerPost = remainingSeconds / remainingPosts
     print i,
