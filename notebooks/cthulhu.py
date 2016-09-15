@@ -67,5 +67,8 @@ def slackPost(text,username=None, icon_emoji=None, channel='#random', url=markov
     response = urllib2.urlopen(req, json.dumps(data))
 
 while True:
-    slackPost(growMarkov(),'Markov Cthulhu',':cthulhu:','#random')
-    time.sleep(600)
+    text = growMarkov()
+    slackPost(text,'Markov Cthulhu',':cthulhu:','#random')
+    sleeptime = len(text) * 4
+    print sleeptime
+    time.sleep(sleeptime)
