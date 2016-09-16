@@ -62,9 +62,10 @@ for i in range(0,len(content)):
     message = content.ix[i]['message']
     secondsPerPost = 0
     if len(content) != i and True:
-        remainingPosts = len(content) - i - 1
-        remainingSeconds = (datetime.datetime(2016, 9, 16, 7) - datetime.datetime.now()).total_seconds()
-        secondsPerPost = remainingSeconds / remainingPosts
+        #remainingPosts = len(content) - i - 1
+        #remainingSeconds = (datetime.datetime(2016, 9, 16, 7) - datetime.datetime.now()).total_seconds()
+        #secondsPerPost = remainingSeconds / remainingPosts
+        secondsPerPost = 300
     print i,
     try:
         slackPost(message, 'Markov ' + user, user_emoji_map[user], '#markov')

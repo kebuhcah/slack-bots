@@ -24,7 +24,12 @@ req.add_header('Content-Type', 'application/json; charset=utf-8')
 response = urllib2.urlopen(req)
 markovHistory=DataFrame(json.load(response)['messages'])
 
-material = [s for s in (' $$$ '.join(markovHistory[(markovHistory.username.fillna('').str.startswith('Markov '))&(markovHistory.username!='Markov Cthulhu')].text.tolist()) + ' $$$').split(' ') if s]
+content=pd.read_csv("markov_content.csv",delimiter="|")
+
+markovText = markovHistory[(markovHistory.username.fillna('').str.startswith('Markov '))&(markovHistory.username!='Markov Cthulhu')].text.tolist()
+premarkovText = content.message.str.strip().tolist()
+
+material = [s for s in (' $$$ '.join(markovText + premarkovText) + ' $$$').split(' ') if s]
 
 markovmap = {}
 maxchainlength=3
@@ -69,6 +74,6 @@ def slackPost(text,username=None, icon_emoji=None, channel='#random', url=markov
 while True:
     text = growMarkov()
     slackPost(text,'Markov Cthulhu',':cthulhu:','#random')
-    sleeptime = len(text) * 4
+    sleeptime = len(text) * 7
     print sleeptime
     time.sleep(sleeptime)
