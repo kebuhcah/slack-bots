@@ -34,7 +34,7 @@ material = [s for s in (' $$$ '.join(markovText + premarkovText) + ' $$$').split
 markovmap = {}
 maxchainlength=3
 for i in range(0,len(material)):
-    token = material[i]
+    token = material[i].lower()
     if not token in markovmap:
         markovmap[token]={}
         for j in range(1,maxchainlength):
@@ -52,7 +52,7 @@ for i in range(0,len(material)):
 def growMarkov(src=''):
     lastword = src.split(' ')[-1] if src else '$$$'
     #print lastword
-    nextword = (lambda t:random.choice([v for s in [[x]*t[x] for x in t.index] for v in s]))(pd.Series(markovmap[lastword][1]))
+    nextword = (lambda t:random.choice([v for s in [[x]*t[x] for x in t.index] for v in s]))(pd.Series(markovmap[lastword.lower()][1]))
     if nextword == '$$$':
         return src
     else:
