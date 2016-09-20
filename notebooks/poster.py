@@ -54,7 +54,8 @@ user_emoji_map = {
     'Mariano' : ':flag-ar:',
     'Jason' : ':beers:',
     'Sanjay' : ':soccer:',
-    'Ran' : ':runner:'
+    'Ran' : ':runner:',
+    'Greg' : ':dolphin:',
 }
 
 for i in range(0,len(content)):
@@ -65,7 +66,7 @@ for i in range(0,len(content)):
         #remainingPosts = len(content) - i - 1
         #remainingSeconds = (datetime.datetime(2016, 9, 16, 7) - datetime.datetime.now()).total_seconds()
         #secondsPerPost = remainingSeconds / remainingPosts
-        secondsPerPost = 300
+        secondsPerPost = 60 * 45
     print i,
     try:
         slackPost(message, 'Markov ' + user, user_emoji_map[user], '#markov')
